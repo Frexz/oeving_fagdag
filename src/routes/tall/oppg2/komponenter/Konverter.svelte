@@ -1,9 +1,12 @@
 <script>
+    // Objektet inneholder hvilken størrelse konverteringen handler om, hvilken enhet man konverter fra,
+    // hvilken enhet man konverterer til, og en funksjon som konverterer begge veier
     export let k
     let fromUnitValue = 0
     let toUnitValue = 0
-    let rev = false
+    let rev = false     // Sjekker hvilken vei vi ønsker konverteringen
 
+    // Funksjonen endrer vei på konverteringen. F.eks i stedet for fra kg til lbs får vi lbs til kg
     function reverse() {
         let temp = k.fromUnit
         k.fromUnit = k.toUnit
@@ -15,7 +18,7 @@
         rev = rev ? false : true
     }
 
-
+    // Lytter som kjører convert-funksjonen hvis fromUnitValue endrer seg
     $: {
         toUnitValue = k.convert(fromUnitValue, rev)
     }

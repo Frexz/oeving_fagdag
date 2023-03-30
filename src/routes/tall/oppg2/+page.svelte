@@ -2,6 +2,7 @@
     import OppgaveLayout from "../../../komponenter/OppgaveLayout.svelte";
     import Konverter from "./komponenter/Konverter.svelte";
 
+    // Masse - kg til lbs
     let masse = {
         quantity: "Masse",
         fromUnit: "kg",
@@ -15,6 +16,7 @@
         }
     }
 
+    // Fart - kph til mph
     let fart = {
         quantity: "Fart",
         fromUnit: "kph",
@@ -28,6 +30,7 @@
         }
     }
 
+    // Temperatur - Celsius til Fahrenheit
     let temp = {
         quantity: "Temperatur",
         fromUnit: "Celsius",
@@ -53,6 +56,9 @@
         </p>
     </div>
 
+    <!-- Informasjonen om de ulike konverteringen sendes ned som et objekt til Konverter-komponenten.
+    Dette gjør at komponenten er helt generell og kan gjenbrukes til andre typer konverteringer så lenge man 
+    binder variabelen k til et objekt med den nødvendige informasjonen om konverteringen -->
     <div class="oppgave" slot="oppgave">
         <Konverter bind:k={masse}/>
         <Konverter bind:k={fart}/>
