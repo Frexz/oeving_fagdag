@@ -37,10 +37,10 @@
     </div>
 
     <div slot="oppgave">
-        <h1>Velg et tall n</h1>
+        <h2>Velg et tall n</h2>
         <input type="number" bind:value={n} style="margin-bottom:50px;"><br>
 
-        <h1>Fibonacci-sekvensen opptil F<sub>{n}</sub></h1>
+        <h2>Fibonacci-sekvensen opptil F<sub>{n}</sub></h2>
         <p style="font-size: 32px;">
             {#each sekvens as num}
                 {num}&emsp;
@@ -49,19 +49,6 @@
         
     </div>
 </OppgaveLayout>
-
-<style>
-    .tekst h1 {
-        font-size: 40px;
-        color: #413e3e;
-        text-align: left;
-    }
-
-    .tekst p {
-        font-size: 20px;
-        font-family: 'Times New Roman', Times, serif;
-    }
-</style>
 
 
 

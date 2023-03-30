@@ -67,17 +67,6 @@
 </OppgaveLayout>
 
 <style>
-    .tekst h1 {
-        font-size: 40px;
-        color: #413e3e;
-        text-align: left;
-    }
-
-    .tekst p {
-        font-size: 20px;
-        font-family: 'Times New Roman', Times, serif;
-    }
-
     .oppgave {
         display: flex;
         flex-direction: column;
