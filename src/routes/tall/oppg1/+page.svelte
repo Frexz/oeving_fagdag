@@ -38,7 +38,7 @@
 
     <div slot="oppgave">
         <h2>Velg et tall n</h2>
-        <input type="number" bind:value={n} style="margin-bottom:50px;"><br>
+        <input type="number" bind:value={n} style="margin-bottom:50px;">
 
         <h2>Fibonacci-sekvensen opptil F<sub>{n}</sub></h2>
         <p style="font-size: 32px;">

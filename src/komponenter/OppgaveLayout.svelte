@@ -24,6 +24,6 @@
         height: 80vh;
         margin-left: 100px;
         display: flex;
-        justify-content: left;
+        justify-content: center;
     }
 </style>
