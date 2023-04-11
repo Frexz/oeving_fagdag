@@ -15,6 +15,6 @@
     </div>
 
     <div class="oppgave" slot="oppgave">
-        
+        <h1>Se egen fane</h1>
     </div>
 </OppgaveLayout>

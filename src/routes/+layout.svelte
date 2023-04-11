@@ -65,7 +65,9 @@
                 <a href="/data/oppg2">Oppgave 2</a>
             </div>
           </div>
-      </div> 
+
+          <a href="/flag_quiz">Flag-Quiz</a>
+      </div>  
 </nav>
 
 <slot></slot>
