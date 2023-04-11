@@ -1,25 +1,29 @@
 <script>
     import OppgaveLayout from "../../../komponenter/OppgaveLayout.svelte";
-    let n = 1
-    let sekvens
+    let n = 5
+    let sekvens = [n]
 
     function collatz(n) {
         sekvens = [n]
-        while (n > 1) {
-            let forrigeTall = sekvens[-1]
+        let forrigeTall = sekvens[sekvens.length - 1]
+    
+        while (forrigeTall > 1) {
 
             if (forrigeTall % 2 == 0) {
-                sekvens.push(forrigeTall * 2)
+                forrigeTall = forrigeTall / 2
             } else {
-                sekvens.push((forrigeTall * 3) + 1)
+                forrigeTall = (forrigeTall * 3) + 1
             }
+
+            sekvens.push(forrigeTall)
         }
+
+        sekvens = sekvens
     }
 
     $: {
         collatz(n)
     }
-
 </script>
 
 <OppgaveLayout>
@@ -50,8 +54,11 @@
 
         <h2>Collatz-sekvensen til {n}</h2>
         <p style="font-size: 20px;">
-            {#each sekvens as num}
-                {num}&rarr;
+            {#each sekvens as num, i}
+                {num}
+                {#if i < sekvens.length - 1}
+                    &rarr;
+                {/if}
             {/each}
         </p>
     </div>
