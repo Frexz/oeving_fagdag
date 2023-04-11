@@ -1,6 +1,5 @@
 <script>
     import OppgaveLayout from "../../../komponenter/OppgaveLayout.svelte";
-  import Konverter from "../../tall/oppg2/komponenter/Konverter.svelte";
     // Velger å lage funksjonen i en egen js-fil slik at den kan enklere gjenbrukes.
     // F.eks i oppgave 4 kan vi få bruk for den igjen.
     import { reverser } from "./reverser"
