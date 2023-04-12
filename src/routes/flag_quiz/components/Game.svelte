@@ -2,7 +2,6 @@
     export let gamePlaying
     export let land
 
-<<<<<<< HEAD
 
     let score = 0
     let questionCount = 0
@@ -19,21 +18,6 @@
         lives = ["heart", "heart", "heart"]
         makeQuestions(10)
         nextQuestion()
-=======
-    let score = 0
-    let lives = ["heart", "heart", "heart"]
-    let questionCount = 0
-    let questions = []
-    let alternatives = []
-
-    function runGame() {
-        score = 0
-        lives = ["heart", "heart", "heart"]
-        makeQuestions(10)
-        questionCount++
-        makeAlternatives()
-        
->>>>>>> 5ae374eb67e4ed1ea7ed48a164aaf596465cf5a5
     }
 
     function makeQuestions(n){
@@ -63,7 +47,6 @@
             temp.push(randomAlt)
         }
 
-<<<<<<< HEAD
         let unsorted = temp.map((country) => {
             if (country === questions[questionCount - 1]) {
                 return {"country": country, "correct": true, "color": 'green'}
@@ -130,20 +113,6 @@
     $: {
         if (isFinished) {
             gamePlaying = false
-=======
-        let i = Math.floor(Math.random()*temp.length)
-
-        while (temp.length > 0) {
-            alternatives.push(temp.splice(i, 1)[0])
-            i = Math.floor(Math.random()*temp.length)
-        }
-    }
-
-
-    $: {
-        if (gamePlaying) {
-            runGame()
->>>>>>> 5ae374eb67e4ed1ea7ed48a164aaf596465cf5a5
         }
     }
 </script>
@@ -179,13 +148,8 @@
         
 
         <div class="alternatives">
-<<<<<<< HEAD
             {#each alternatives as alt, i}
                 <button class="alt-button" on:click={() => {checkAnswer(alt)}} style="background-color: {(hasAnswered) ? alt.color : "transparent"}">{alt.country.name}</button>
-=======
-            {#each alternatives as alt}
-                <button class="alt-button">{alt.name}</button>
->>>>>>> 5ae374eb67e4ed1ea7ed48a164aaf596465cf5a5
             {/each}
         </div>
     </div>
