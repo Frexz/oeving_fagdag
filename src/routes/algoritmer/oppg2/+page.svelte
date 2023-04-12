@@ -20,8 +20,8 @@
 
     // Gjør at bruker ikke kan legge inn tall mindre enn 2
     $: {
-        if (n < 2) {
-            n = 2
+        if (n < 0) {
+            n = 0
         }
     }
 
