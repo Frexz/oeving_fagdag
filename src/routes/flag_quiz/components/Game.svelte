@@ -3,8 +3,8 @@
     export let land
 
 
-    let score = 0
-    let questionCount = 0
+    let score
+    let questionCount
     let isFinished
     let hasAnswered
     let lives = ["heart", "heart", "heart"]
@@ -15,7 +15,10 @@
         isFinished = false
         hasAnswered = false
         score = 0
+        questionCount = 0
         lives = ["heart", "heart", "heart"]
+        questions = []
+        alternatives = []
         makeQuestions(10)
         nextQuestion()
     }
@@ -110,11 +113,6 @@
         }
     }
 
-    $: {
-        if (isFinished) {
-            gamePlaying = false
-        }
-    }
 </script>
 
 <div class="game-area">
@@ -149,8 +147,13 @@
 
         <div class="alternatives">
             {#each alternatives as alt, i}
-                <button class="alt-button" on:click={() => {checkAnswer(alt)}} style="background-color: {(hasAnswered) ? alt.color : "transparent"}">{alt.country.name}</button>
+                <button class="alt-button" on:click={() => {checkAnswer(alt)}} style="background-color: {(hasAnswered) ? alt.color : 'rgb(255, 56, 86)'}">{alt.country.name}</button>
             {/each}
         </div>
     </div>
+</div>
+
+<div class="options">
+    <button class="menu-button" on:click={() => {initializeGame()}}>Restart Game</button>
+    <button class="menu-button" on:click={() => {gamePlaying = false}}>Back to Main Menu</button>
 </div>

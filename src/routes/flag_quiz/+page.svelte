@@ -5,7 +5,7 @@
     export let data
     let land = data.land
 
-    let gamePlaying = true
+    let gamePlaying = false
 
 </script>
 
@@ -23,12 +23,7 @@
     {:else}
 
     <div class="quiz">
-        
         <Game bind:gamePlaying bind:land/>
-        
-        <div class="options">
-            <button class="menu-button" on:click={() => {gamePlaying = false}}>Back to Main Menu</button>
-        </div>
     </div>
 
     {/if}
